@@ -1,22 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from './components/SearchBar/SearchBar.js';
+import Spotify from "./util/Spotify.js";
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React dude!!!!!!
-        </a>
+        <h1>Create a Spotify Playlist</h1>
+        <SearchBar />
+        
       </header>
     </div>
   );
