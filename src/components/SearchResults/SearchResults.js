@@ -35,7 +35,7 @@ return (
         <tbody>
           {props.results.map((val,key) => {
              return (
-              <tr key={val}>
+              <tr key={val.name}>
              <td>{val.name}</td>
              <td>{val.artist}</td>
              <td>{val.album}</td>
