@@ -5,8 +5,6 @@ import Spotify from "../../util/Spotify.js";
 
 
 export default function SearchResults(props) {
-   
-
   let testArray= [
       {
           name: "john",
@@ -21,28 +19,32 @@ export default function SearchResults(props) {
 
       }
   ]
+  //console.log('props: ', props)
 
 return (
   <div>
       <h2>SearchResults</h2>
       <table>
-<tr>
-  <th>Name</th>
-  <th>Artist</th>
-  <th>Album</th>
-</tr>
-{props.results.map((val,key) => {
-  return (
-      <tr key={val}>
-  <td>{val.name}</td>
-  <td>Friank</td>
-  <td>Exodus</td>
-</tr>
-  )
-})}
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Artist</th>
+            <th>Album</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.results.map((val,key) => {
+             return (
+              <tr key={val}>
+             <td>{val.name}</td>
+             <td>{val.artist}</td>
+             <td>{val.album}</td>
+         </tr>
+                )
+             })}
 
-
-</table>
+        </tbody>
+      </table>
   </div>
 )
 }

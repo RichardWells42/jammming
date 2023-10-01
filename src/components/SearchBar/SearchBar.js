@@ -18,7 +18,12 @@ export default function SearchBar() {
 
          }
          // set a variable called data  for its return data
-         setSearchResults(data)
+         setSearchResults([ {
+            name: "person",
+            artist: "thing",
+            album: "stuff"
+
+        },])
      }
      let testArray2= [
         {
