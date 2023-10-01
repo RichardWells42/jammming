@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import Spotify from '../../util/Spotify';
 import './SearchBar.css';
 import { getSongs } from "../../services/getSongs";
 import SearchResults from '../SearchResults/SearchResults.js';
@@ -9,6 +8,7 @@ export default function SearchBar() {
      // creat a state
      const [searchResults, setSearchResults] = useState([]);
      const [inputText, setInputText] = useState("");
+     
      function handleClick() {
          // grab the search query text
          console.log('inputText', inputText)
@@ -27,16 +27,21 @@ export default function SearchBar() {
         let redAlbum = [basicArrays[0]]
         let blueAlbum = [basicArrays[1]]
         let finalAlbum = [];
+       
+        //let data = ;
+        //let inputText = '';
+
         // return a red or blue almbum depending on what we write in the input box
         if(inputText == "red") {
             finalAlbum = redAlbum
         } else if(inputText == "blue") {
             finalAlbum = blueAlbum
         }
-         
-         setSearchResults(finalAlbum)
+          setSearchResults(finalAlbum)
+          //setSearchResults()
      }
      const handleChange = (e) => {
+       
         // 👇 Store the input value to local state
         setInputText(e.target.value);
       };
@@ -56,7 +61,8 @@ export default function SearchBar() {
           })
           .catch((error) => console.log(error));
       }, []);
-  return (
+ 
+      return (
     <div>
         Search a Song
         <input type="text" onChange={handleChange} value={inputText}></input>

@@ -21,34 +21,33 @@ export default function SearchResults(props) {
   ]
   //console.log('props: ', props)
 
-return (
-  <div>
-      <h2>SearchResults</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Artist</th>
-            <th>Album</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.results.map((val,key) => {
-             return (
-              <tr key={val.name}>
-             <td>{val.name}</td>
-             <td>{val.artist}</td>
-             <td>{val.album}</td>
-         </tr>
-                )
-             })}
-
-        </tbody>
-      </table>
-  </div>
-)
-}
-
+  return (
+    <div>
+        <h2>SearchResults</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Artist</th>
+              <th>Album</th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.results.map((val,key) => {
+               return (
+                <tr key={val.name}>
+               <td>{val.name}</td>
+               <td>{val.artist}</td>
+               <td>{val.album}</td>
+           </tr>
+                  )
+               })}
+  
+          </tbody>
+        </table>
+    </div>
+  )
+  }
 
 
 
