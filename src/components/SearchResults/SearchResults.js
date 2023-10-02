@@ -38,7 +38,7 @@ export default function SearchResults(props) {
                 <tr key={val.name}>
                <td>{val.name}</td>
                <td>{val.artist}</td>
-               <td>{val.album}</td>
+               <td>{val.strAlbum}</td>
            </tr>
                   )
                })}

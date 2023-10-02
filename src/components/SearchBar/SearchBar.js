@@ -37,8 +37,9 @@ export default function SearchBar() {
         } else if(inputText == "blue") {
             finalAlbum = blueAlbum
         }
-          setSearchResults(finalAlbum)
+          // setSearchResults(finalAlbum)
           //setSearchResults()
+          getArtistData(inputText)
      }
      const handleChange = (e) => {
        
@@ -46,8 +47,8 @@ export default function SearchBar() {
         setInputText(e.target.value);
       };
 
-      useEffect(() => {
-        fetch('https://theaudiodb.p.rapidapi.com/searchalbum.php?s=daft_punk', {
+      function getArtistData (artist){
+        fetch('https://theaudiodb.p.rapidapi.com/searchalbum.php?s=' + artist, {
           method: "GET",
           headers: {
             "X-RapidAPI-Key": "c61699b34fmsh5cf7e2a384ec8cap188f4bjsn0309e6f30868",
@@ -58,13 +59,34 @@ export default function SearchBar() {
           .then((data) => {
             //setJoke(data[0].joke);
             console.log('data: ', data);
+            let results = []
+            if (data.album){
+              results = data.album
+            }
+            setSearchResults(results)
           })
           .catch((error) => console.log(error));
-      }, []);
+      }
+
+      // useEffect(() => {
+      //   fetch('https://theaudiodb.p.rapidapi.com/searchalbum.php?s=daft_punk', {
+      //     method: "GET",
+      //     headers: {
+      //       "X-RapidAPI-Key": "c61699b34fmsh5cf7e2a384ec8cap188f4bjsn0309e6f30868",
+      //       "X-RapidAPI-Host": "theaudiodb.p.rapidapi.com",
+      //     },
+      //   })
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //       //setJoke(data[0].joke);
+      //       console.log('data: ', data);
+      //     })
+      //     .catch((error) => console.log(error));
+      // }, []);
  
       return (
     <div>
-        Search a Song
+    Search an Artist
         <input type="text" onChange={handleChange} value={inputText}></input>
         <button onClick={handleClick}>Search</button>
         <SearchResults results={searchResults}/>
