@@ -27,7 +27,7 @@ export default function SearchResults(props) {
         <table>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Song Name</th>
               <th>Artist</th>
               <th>Album</th>
             </tr>
